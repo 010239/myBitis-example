@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS `t_user`;
+CREATE TABLE `t_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL,
+  `pass` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=gbk;
+
+CREATE TABLE `t_mobile` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `telnumber` varchar(20) DEFAULT NULL,
+  `userid` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=gbk;
+
+INSERT INTO `t_user` VALUES ('1', 'ssssssssssssssss', 'ddsssssssdd');
+INSERT INTO `t_mobile` VALUES ('1', '13439870105', '1');

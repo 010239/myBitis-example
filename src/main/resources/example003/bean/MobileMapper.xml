@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Mobile">
+    <resultMap id="userResultMap" type="mobile">
+        <id property="id" column="id"/>
+        <result property="telnumber" column="telnumber"/>
+        <association property="user" javaType="User">
+            <id property="id" column="id"/>
+            <result property="userName" column="name"/>
+            <result property="password" column="pass"/>
+        </association>
+    </resultMap>
+
+    <!--多表查询操作-->
+    <select id="selectMobile" parameterType="int" resultMap="userResultMap">
+        <!--分别为mobile的主键id与user的主键id赋值别名,避免因为两个表字段名称相同而注入到对应对象名称冲突-->
+        select m.id m_id,m.telnumber,u.id u_id,u.name,u.pass from t_mobile m,t_user u where m.userid = u.id and m.id = #{id}
+    </select>
+
+    <!---->
+</mapper>

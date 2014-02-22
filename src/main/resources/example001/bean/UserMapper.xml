@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="User">
+    <!--resultType 表示example001.bean.User这样一个实体对象 -->
+    <select id="selectUser" parameterType="int" resultType="user">
+        select * from t_user where id = #{id}
+    </select>
+</mapper>
